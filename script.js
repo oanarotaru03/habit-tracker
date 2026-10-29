@@ -2,6 +2,7 @@ const habitInput = document.getElementById("habitInput");
 const addBtn = document.getElementById("addBtn");
 const habitList = document.getElementById("habitList");
 const progressDisplay = document.getElementById("progressDisplay");
+const resetBtn = document.getElementById("resetBtn");
 let habits = [];
 
 function saveHabits() {
@@ -73,4 +74,13 @@ function renderHabits() {
 }
 
 addBtn.addEventListener("click", addHabit);
+
+resetBtn.addEventListener("click", () => {
+    habits.forEach((habit) => {
+        habit.done = false;
+    });
+    saveHabits();
+    renderHabits();
+});
+
 loadHabits();
