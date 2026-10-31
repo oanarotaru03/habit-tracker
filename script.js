@@ -82,5 +82,9 @@ resetBtn.addEventListener("click", () => {
     saveHabits();
     renderHabits();
 });
-
+habitInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        addHabit();
+    }
+});
 loadHabits();
