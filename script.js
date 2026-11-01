@@ -70,7 +70,11 @@ function renderHabits() {
         habitList.appendChild(li);
     });
 
-    progressDisplay.textContent = `${doneCount} / ${habits.length} done`;
+        if (habits.length > 0 && doneCount === habits.length) {
+        progressDisplay.textContent = `${doneCount} / ${habits.length} done 🎉`;
+    } else {
+        progressDisplay.textContent = `${doneCount} / ${habits.length} done`;
+    }
 }
 
 addBtn.addEventListener("click", addHabit);
