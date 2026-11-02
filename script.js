@@ -91,4 +91,6 @@ habitInput.addEventListener("keydown", (event) => {
         addHabit();
     }
 });
+const dateDisplay = document.getElementById("dateDisplay");
+dateDisplay.textContent = `Today: ${new Date().toLocaleDateString("ro-RO")}`;
 loadHabits();
