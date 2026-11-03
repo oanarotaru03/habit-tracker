@@ -66,11 +66,13 @@ function renderHabits() {
         });
 
         deleteBtn.addEventListener("click", () => {
-            habits.splice(index, 1);
-            saveHabits();
-            renderHabits();
+            if (confirm("Sigur ștergi acest obicei?")) {
+                habits.splice(index, 1);
+                saveHabits();
+                renderHabits();
+            }
         });
-
+        
         li.appendChild(span);
         li.appendChild(deleteBtn);
         habitList.appendChild(li);
