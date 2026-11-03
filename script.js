@@ -36,7 +36,11 @@ function addHabit() {
 
 function renderHabits() {
     habitList.innerHTML = "";
+            if (habits.length === 0) {
+        totalDisplay.textContent = "No habits yet";
+    } else {
         totalDisplay.textContent = `Total habits: ${habits.length}`;
+    }
 
     let doneCount = 0;
 
