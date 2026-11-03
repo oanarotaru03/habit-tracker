@@ -2,6 +2,7 @@ const habitInput = document.getElementById("habitInput");
 const addBtn = document.getElementById("addBtn");
 const habitList = document.getElementById("habitList");
 const progressDisplay = document.getElementById("progressDisplay");
+const totalDisplay = document.getElementById("totalDisplay");
 const resetBtn = document.getElementById("resetBtn");
 let habits = [];
 
@@ -35,6 +36,7 @@ function addHabit() {
 
 function renderHabits() {
     habitList.innerHTML = "";
+        totalDisplay.textContent = `Total habits: ${habits.length}`;
 
     let doneCount = 0;
 
