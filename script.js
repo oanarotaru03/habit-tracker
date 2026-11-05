@@ -54,6 +54,10 @@ function renderHabits() {
         deleteBtn.textContent = "Delete";
         deleteBtn.classList.add("delete-btn");
 
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
+        editBtn.classList.add("edit-btn");
+
         if (habit.done) {
             li.classList.add("done");
             doneCount += 1;
@@ -72,8 +76,19 @@ function renderHabits() {
                 renderHabits();
             }
         });
+
+                editBtn.addEventListener("click", () => {
+            const newName = prompt("Enter new name:", habit.name);
+
+            if (newName !== null && newName.trim() !== "") {
+                habit.name = newName.trim();
+                saveHabits();
+                renderHabits();
+            }
+        });
         
         li.appendChild(span);
+        li.appendChild(editBtn);
         li.appendChild(deleteBtn);
         habitList.appendChild(li);
     });
