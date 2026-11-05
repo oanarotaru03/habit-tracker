@@ -19,7 +19,7 @@ function loadHabits() {
 }
 
 function addHabit() {
-    const name = habitInput.value;
+    const name = habitInput.value.trim();
 
     if (name === "") {
         return;
